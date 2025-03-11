@@ -8,13 +8,8 @@ body {
     height: 100vh;
     margin: 0;
     text-align: center;
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1e1e1e;
-        color: white;
-    }
+    overflow: hidden;
+    /* Verhindert Scrollen und Überläufe */
 }
 
 .center {
@@ -25,7 +20,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto;
+    width: 90%;
+    /* Nutzt 90% der Breite */
+    max-width: 600px;
+    /* Maximale Breite auf großen Bildschirmen */
+    box-sizing: border-box;
 }
 
 .cd {
@@ -51,4 +50,19 @@ body {
 .cd-remaining {
     color: white;
     text-shadow: 0 0 10px white;
+}
+
+/* Anpassung für mobile Geräte */
+@media (max-width: 768px) {
+    .cd {
+        font-size: 48px;
+        /* Kleinere Schrift für Handys */
+    }
+
+    .center {
+        padding: 20px;
+        /* Weniger Padding auf kleinen Bildschirmen */
+        width: 85%;
+        /* Reduziert die Breite */
+    }
 }
